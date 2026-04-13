@@ -1150,19 +1150,31 @@ export default function App() {
                   Contact Information
                 </h3>
                 {[
-                  { icon: "📞", label: "Phone", val: "+353 899749649" },
+                  {
+                    icon: "📞",
+                    label: "Phone",
+                    val: "+353 899749649",
+                    href: "tel:+353899749649",
+                  },
                   {
                     icon: "📧",
                     label: "Email",
                     val: "stormsafetyhomeimprovements@gmail.com",
+                    href: "mailto:stormsafetyhomeimprovements@gmail.com",
                   },
                   {
                     icon: "📍",
                     label: "Location",
                     val: "Serving Carlow, Kilkenny, Tipperary & surrounding counties",
+                    href: "#",
                   },
-                  // { icon: "🕒", label: "Hours", val: "Mon–Sat: 8am – 6pm" },
-                ].map(({ icon, label, val }) => (
+                  {
+                    icon: "🏠",
+                    label: "Address",
+                    val: "Carlow Road, Tullow, Co. Carlow",
+                    href: "#",
+                  },
+                ].map(({ icon, label, val, href }) => (
                   <div
                     key={label}
                     style={{
@@ -1172,42 +1184,44 @@ export default function App() {
                       alignItems: "flex-start",
                     }}
                   >
-                    <div
-                      style={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: "50%",
-                        background: "rgba(200,168,75,0.1)",
-                        border: "1px solid rgba(200,168,75,0.3)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "1.2rem",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {icon}
-                    </div>
-                    <div>
+                    <a href={href} style={{ textDecoration: "none" }}>
                       <div
-                        className="lato"
                         style={{
-                          fontSize: "0.7rem",
-                          letterSpacing: "2px",
-                          textTransform: "uppercase",
-                          color: "var(--gold)",
-                          marginBottom: 4,
+                          width: 48,
+                          height: 48,
+                          borderRadius: "50%",
+                          background: "rgba(200,168,75,0.1)",
+                          border: "1px solid rgba(200,168,75,0.3)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: "1.2rem",
+                          flexShrink: 0,
                         }}
                       >
-                        {label}
+                        {icon}
                       </div>
-                      <div
-                        className="lato"
-                        style={{ color: "var(--cream)", fontSize: "0.95rem" }}
-                      >
-                        {val}
+                      <div>
+                        <div
+                          className="lato"
+                          style={{
+                            fontSize: "0.7rem",
+                            letterSpacing: "2px",
+                            textTransform: "uppercase",
+                            color: "var(--gold)",
+                            marginBottom: 4,
+                          }}
+                        >
+                          {label}
+                        </div>
+                        <div
+                          className="lato"
+                          style={{ color: "var(--cream)", fontSize: "0.95rem" }}
+                        >
+                          {val}
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 ))}
 
@@ -1582,26 +1596,33 @@ export default function App() {
               >
                 Contact
               </div>
-              <div
-                className="lato"
-                style={{
-                  color: "var(--stone)",
-                  fontSize: "0.9rem",
-                  marginBottom: 10,
-                }}
+              <a href="tel:+353899749649" style={{ textDecoration: "none" }}>
+                <div
+                  className="lato"
+                  style={{
+                    color: "var(--stone)",
+                    fontSize: "0.9rem",
+                    marginBottom: 10,
+                  }}
+                >
+                  +353 899749649
+                </div>
+              </a>
+              <a
+                href="mailto:stormsafetyhomeimprovements@gmail.com"
+                style={{ textDecoration: "none" }}
               >
-                +353 87 123 4567
-              </div>
-              <div
-                className="lato"
-                style={{
-                  color: "var(--stone)",
-                  fontSize: "0.9rem",
-                  marginBottom: 10,
-                }}
-              >
-                info@stormsafety.ie
-              </div>
+                <div
+                  className="lato"
+                  style={{
+                    color: "var(--stone)",
+                    fontSize: "0.9rem",
+                    marginBottom: 10,
+                  }}
+                >
+                  stormsafetyhomeimprovements@gmail.com
+                </div>
+              </a>
               <div
                 className="lato"
                 style={{ color: "var(--stone)", fontSize: "0.9rem" }}
