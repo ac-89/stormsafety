@@ -80,23 +80,23 @@ const GALLERY_ITEMS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "Margaret O'Brien",
-    text: "Incredible work on our storm-damaged oak. Professional, fast, and left the garden spotless.",
-    stars: 5,
-  },
-  {
-    name: "Tom Kavanagh",
-    text: "The roof looks brand new. They found two cracked tiles we didn't even know about. Highly recommend.",
-    stars: 5,
-  },
-  {
-    name: "Sarah Flynn",
-    text: "Power washed our entire driveway and patio — transformed. Will be using them every year.",
-    stars: 5,
-  },
-];
+// const TESTIMONIALS = [
+//   {
+//     name: "Margaret O'Brien",
+//     text: "Incredible work on our storm-damaged oak. Professional, fast, and left the garden spotless.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Tom Kavanagh",
+//     text: "The roof looks brand new. They found two cracked tiles we didn't even know about. Highly recommend.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Sarah Flynn",
+//     text: "Power washed our entire driveway and patio — transformed. Will be using them every year.",
+//     stars: 5,
+//   },
+// ];
 
 // function StarRating({ count }) {
 //   return (
@@ -118,7 +118,7 @@ function useInView(threshold = 0.15) {
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, []);
+  }, [threshold]);
   return [ref, inView];
 }
 
@@ -154,7 +154,7 @@ export default function App() {
   const [heroRef, heroIn] = useInView(0.1);
   const [servRef, servIn] = useInView(0.1);
   const [gallRef, gallIn] = useInView(0.1);
-  const [testRef, testIn] = useInView(0.1);
+  // const [testRef, testIn] = useInView(0.1);
   const [contRef, contIn] = useInView(0.1);
 
   return (
