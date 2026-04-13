@@ -1295,6 +1295,7 @@ export default function App() {
                           Full Name *
                         </label>
                         <input
+                          name="name"
                           required
                           className="form-input"
                           placeholder="Your name"
@@ -1319,6 +1320,7 @@ export default function App() {
                           Phone *
                         </label>
                         <input
+                          name="phone"
                           required
                           className="form-input"
                           placeholder="Your number"
@@ -1344,6 +1346,7 @@ export default function App() {
                         Email Address
                       </label>
                       <input
+                        name="email"
                         type="email"
                         className="form-input"
                         placeholder="you@email.com"
@@ -1368,6 +1371,7 @@ export default function App() {
                         Service Required
                       </label>
                       <select
+                        name="service"
                         className="form-input"
                         value={formData.service}
                         onChange={(e) =>
@@ -1397,6 +1401,7 @@ export default function App() {
                         Message *
                       </label>
                       <textarea
+                        name="message"
                         required
                         className="form-input"
                         rows={5}
