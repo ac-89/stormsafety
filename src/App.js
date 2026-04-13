@@ -1159,7 +1159,7 @@ export default function App() {
                   {
                     icon: "📍",
                     label: "Location",
-                    val: "Serving Dublin & surrounding counties",
+                    val: "Serving Carlow, Kilkenny, Tipperary & surrounding counties",
                   },
                   // { icon: "🕒", label: "Hours", val: "Mon–Sat: 8am – 6pm" },
                 ].map(({ icon, label, val }) => (
@@ -1606,7 +1606,7 @@ export default function App() {
                 className="lato"
                 style={{ color: "var(--stone)", fontSize: "0.9rem" }}
               >
-                Dublin & surrounds
+                Carlow, Kilkenny, Tipperary & surrounding counties
               </div>
             </div>
           </div>
