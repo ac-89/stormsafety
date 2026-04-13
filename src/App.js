@@ -1157,6 +1157,12 @@ export default function App() {
                     href: "tel:+353899749649",
                   },
                   {
+                    icon: "📞",
+                    label: "Phone",
+                    val: "059 9187189",
+                    href: "tel:05959187189",
+                  },
+                  {
                     icon: "📧",
                     label: "Email",
                     val: "stormsafetyhomeimprovements@gmail.com",
