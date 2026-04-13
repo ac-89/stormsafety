@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
-    <form name="contact" netlify data-netlify="true" hidden>
+    <form name="stormContact" netlify data-netlify="true" hidden>
       <input type="text" name="name" />
       <input type="text" name="phone" />
       <input type="text" name="address" />
