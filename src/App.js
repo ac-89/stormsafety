@@ -1271,7 +1271,7 @@ export default function App() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} netlify>
+                  <form onSubmit={handleSubmit} name="stormContact" netlify>
                     <div
                       style={{
                         display: "grid",
