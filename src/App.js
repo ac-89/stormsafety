@@ -141,9 +141,25 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleSubmit = (e) => {
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
+      )
+      .join("&");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "stormContact", ...formData }),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
   };
 
   const scrollTo = (id) => {
@@ -1272,6 +1288,12 @@ export default function App() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} name="stormContact" netlify>
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="stormContact"
+                    />
+
                     <div
                       style={{
                         display: "grid",
