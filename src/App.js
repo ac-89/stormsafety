@@ -35,50 +35,63 @@ const SERVICES = [
   },
 ];
 
-const GALLERY_ITEMS = [
-  {
-    id: 1,
-    label: "Tree Removal",
-    color: "#2d4a2d",
-    emoji: "🌲",
-    after: "Large oak safely felled & cleared",
-  },
-  {
-    id: 2,
-    label: "Roof Repair",
-    color: "#3a3328",
-    emoji: "🔨",
-    after: "Tiles replaced, moss treated",
-  },
-  {
-    id: 3,
-    label: "Power Wash",
-    color: "#1e3a4a",
-    emoji: "💧",
-    after: "Driveway fully restored",
-  },
-  {
-    id: 4,
-    label: "Garden Design",
-    color: "#2d4a35",
-    emoji: "🌿",
-    after: "Full garden redesign & tidy",
-  },
-  {
-    id: 5,
-    label: "Storm Damage",
-    color: "#4a3228",
-    emoji: "⚡",
-    after: "Emergency storm clearance",
-  },
-  {
-    id: 6,
-    label: "Hedge Trimming",
-    color: "#283d28",
-    emoji: "✂️",
-    after: "Overgrown hedges shaped",
-  },
-];
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const GALLERY_ITEMS = importAll(
+  require.context("../public/images", false, /\.(png|jpe?g|svg)$/),
+).map((src, index) => ({
+  key: index,
+  src: src,
+}));
+
+console.log("Gallery items:", GALLERY_ITEMS);
+
+// const GALLERY_ITEMS = [
+//   {
+//     id: 1,
+//     label: "Tree Removal",
+//     color: "#2d4a2d",
+//     emoji: "🌲",
+//     after: "Large oak safely felled & cleared",
+//   },
+//   {
+//     id: 2,
+//     label: "Roof Repair",
+//     color: "#3a3328",
+//     emoji: "🔨",
+//     after: "Tiles replaced, moss treated",
+//   },
+//   {
+//     id: 3,
+//     label: "Power Wash",
+//     color: "#1e3a4a",
+//     emoji: "💧",
+//     after: "Driveway fully restored",
+//   },
+//   {
+//     id: 4,
+//     label: "Garden Design",
+//     color: "#2d4a35",
+//     emoji: "🌿",
+//     after: "Full garden redesign & tidy",
+//   },
+//   {
+//     id: 5,
+//     label: "Storm Damage",
+//     color: "#4a3228",
+//     emoji: "⚡",
+//     after: "Emergency storm clearance",
+//   },
+//   {
+//     id: 6,
+//     label: "Hedge Trimming",
+//     color: "#283d28",
+//     emoji: "✂️",
+//     after: "Overgrown hedges shaped",
+//   },
+// ];
 
 // const TESTIMONIALS = [
 //   {
@@ -387,7 +400,7 @@ export default function App() {
                 textTransform: "uppercase",
               }}
             >
-              Home Repairs
+              Home Improvements
             </div>
           </div>
 
@@ -586,8 +599,8 @@ export default function App() {
             }}
           >
             From storm-damaged trees to mossy rooftops and grimy driveways —
-            Storm Safety Home Repairs delivers expert, reliable work across all
-            aspects of home maintenance.
+            Storm Safety Home Improvements delivers expert, reliable work across
+            all aspects of home maintenance.
           </p>
           <div
             className={`fade-up ${heroIn ? "in" : ""} fade-up-delay-3`}
@@ -797,7 +810,7 @@ export default function App() {
                     style={{
                       position: "absolute",
                       inset: 0,
-                      background: `linear-gradient(135deg, ${item.color} 0%, rgba(0,0,0,0.7) 100%)`,
+                      background: `url(${item.src}) center/cover no-repeat`,
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
@@ -1510,7 +1523,7 @@ export default function App() {
                   marginBottom: 20,
                 }}
               >
-                Home Repairs
+                Home Improvements
               </div>
               <p
                 className="lato"
@@ -1651,7 +1664,7 @@ export default function App() {
               className="lato"
               style={{ color: "var(--stone)", fontSize: "0.8rem" }}
             >
-              © 2026 Storm Safety Home Repairs. All rights reserved.
+              © 2026 Storm Safety Home Improvements. All rights reserved.
             </div>
             <div
               className="lato"
