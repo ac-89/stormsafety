@@ -40,7 +40,7 @@ function importAll(r) {
 }
 
 const GALLERY_ITEMS = importAll(
-  require.context("../public/images", false, /\.(png|jpe?g|svg)$/),
+  require.context("../public/images/gallery", false, /\.(png|jpe?g|svg)$/),
 ).map((src, index) => ({
   key: index,
   src: src,
@@ -880,7 +880,6 @@ export default function App() {
               background: "rgba(0,0,0,0.85)",
               backdropFilter: "blur(8px)",
               display: "flex",
-              alignItems: "center",
               justifyContent: "center",
               padding: 40,
             }}
@@ -888,11 +887,11 @@ export default function App() {
             <div
               onClick={(e) => e.stopPropagation()}
               style={{
-                background: "linear-gradient(135deg, #1a2e1a, #152015)",
+                background: `url(${activeGallery.src}) center/cover no-repeat`,
                 border: "1px solid rgba(200,168,75,0.3)",
                 borderRadius: 8,
                 padding: 48,
-                maxWidth: 500,
+                maxWidth: "80%",
                 width: "100%",
                 textAlign: "center",
               }}
