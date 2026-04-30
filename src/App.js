@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-
-const NAV_LINKS = ["Services", "Gallery", "About", "Contact"];
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const SERVICES = [
   {
@@ -34,6 +34,8 @@ const SERVICES = [
     desc: "Professional painting and exterior maintenance services to protect and enhance the beauty of your home.",
   },
 ];
+
+const NAV_LINKS = ["Services", "Gallery", "About", "Contact"];
 
 function importAll(r) {
   return r.keys().map(r);
@@ -145,14 +147,8 @@ export default function App() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [activeGallery, setActiveGallery] = useState(null);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [activeGallery, setActiveGallery] = useState(null);
 
   const encode = (data) =>
     Object.keys(data)
@@ -185,6 +181,14 @@ export default function App() {
   const [gallRef, gallIn] = useInView(0.1);
   // const [testRef, testIn] = useInView(0.1);
   const [contRef, contIn] = useInView(0.1);
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
@@ -354,139 +358,7 @@ export default function App() {
       `}</style>
 
       {/* NAV */}
-      <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          background: scrolled ? "rgba(15,26,15,0.97)" : "transparent",
-          backdropFilter: scrolled ? "blur(12px)" : "none",
-          borderBottom: scrolled ? "1px solid rgba(74,124,74,0.2)" : "none",
-          transition: "all 0.4s ease",
-          padding: "0 40px",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: 72,
-          }}
-        >
-          <div onClick={() => scrollTo("hero")} style={{ cursor: "pointer" }}>
-            <div
-              className="playfair"
-              style={{
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                color: "#fff",
-                letterSpacing: "0.5px",
-                lineHeight: 1.2,
-              }}
-            >
-              Storm Safety
-            </div>
-            <div
-              className="lato"
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "4px",
-                color: "var(--gold)",
-                textTransform: "uppercase",
-              }}
-            >
-              Home Improvements
-            </div>
-          </div>
-
-          {/* Desktop Nav */}
-          <div
-            style={{ display: "flex", gap: 36, alignItems: "center" }}
-            className="desktop-nav"
-          >
-            {NAV_LINKS.map((l) => (
-              <span
-                key={l}
-                className="nav-link"
-                onClick={() => scrollTo(l.toLowerCase())}
-              >
-                {l}
-              </span>
-            ))}
-            <button
-              className="btn-primary"
-              style={{ padding: "10px 24px", fontSize: "0.7rem" }}
-              onClick={() => scrollTo("contact")}
-            >
-              Free Quote
-            </button>
-          </div>
-
-          {/* Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              display: "none",
-              flexDirection: "column",
-              gap: 5,
-            }}
-            id="hamburger"
-          >
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                style={{
-                  display: "block",
-                  width: 24,
-                  height: 2,
-                  background: "var(--cream)",
-                  borderRadius: 2,
-                  transition: "transform 0.3s",
-                }}
-              />
-            ))}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div
-            style={{
-              background: "rgba(15,26,15,0.98)",
-              padding: "24px 40px 32px",
-              display: "flex",
-              flexDirection: "column",
-              gap: 20,
-            }}
-          >
-            {NAV_LINKS.map((l) => (
-              <span
-                key={l}
-                className="nav-link"
-                style={{ fontSize: "1rem", letterSpacing: "3px" }}
-                onClick={() => scrollTo(l.toLowerCase())}
-              >
-                {l}
-              </span>
-            ))}
-            <button
-              className="btn-primary"
-              style={{ width: "fit-content", marginTop: 8 }}
-              onClick={() => scrollTo("contact")}
-            >
-              Free Quote
-            </button>
-          </div>
-        )}
-      </nav>
+      <Navbar links={NAV_LINKS} />
 
       {/* HERO */}
       <section
@@ -1483,197 +1355,7 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <footer
-        style={{
-          background: "#080f08",
-          borderTop: "1px solid rgba(74,124,74,0.2)",
-          padding: "60px 40px 32px",
-        }}
-      >
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div
-            className="footer-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "2fr 1fr 1fr 1fr",
-              gap: 48,
-              marginBottom: 48,
-            }}
-          >
-            <div>
-              <div
-                className="playfair"
-                style={{
-                  fontSize: "1.3rem",
-                  fontWeight: 700,
-                  color: "#fff",
-                  marginBottom: 4,
-                }}
-              >
-                Storm Safety
-              </div>
-              <div
-                className="lato"
-                style={{
-                  fontSize: "0.6rem",
-                  letterSpacing: "4px",
-                  color: "var(--gold)",
-                  textTransform: "uppercase",
-                  marginBottom: 20,
-                }}
-              >
-                Home Improvements
-              </div>
-              <p
-                className="lato"
-                style={{
-                  color: "var(--stone)",
-                  lineHeight: 1.8,
-                  fontSize: "0.9rem",
-                  fontWeight: 300,
-                  maxWidth: 280,
-                }}
-              >
-                Trusted home maintenance specialists. Trees, roofs, driveways,
-                and gardens — done right.
-              </p>
-            </div>
-            <div>
-              <div
-                className="lato"
-                style={{
-                  fontSize: "0.65rem",
-                  letterSpacing: "3px",
-                  color: "var(--gold)",
-                  textTransform: "uppercase",
-                  marginBottom: 20,
-                }}
-              >
-                Services
-              </div>
-              {[
-                "Tree Cutting",
-                "Roof Repairs",
-                "Power Washing",
-                "Gardening",
-              ].map((s) => (
-                <div
-                  key={s}
-                  className="lato"
-                  style={{
-                    color: "var(--stone)",
-                    fontSize: "0.9rem",
-                    marginBottom: 10,
-                    cursor: "pointer",
-                  }}
-                  onClick={() => scrollTo("services")}
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
-            <div>
-              <div
-                className="lato"
-                style={{
-                  fontSize: "0.65rem",
-                  letterSpacing: "3px",
-                  color: "var(--gold)",
-                  textTransform: "uppercase",
-                  marginBottom: 20,
-                }}
-              >
-                Navigate
-              </div>
-              {NAV_LINKS.map((l) => (
-                <div
-                  key={l}
-                  className="lato"
-                  style={{
-                    color: "var(--stone)",
-                    fontSize: "0.9rem",
-                    marginBottom: 10,
-                    cursor: "pointer",
-                  }}
-                  onClick={() => scrollTo(l.toLowerCase())}
-                >
-                  {l}
-                </div>
-              ))}
-            </div>
-            <div>
-              <div
-                className="lato"
-                style={{
-                  fontSize: "0.65rem",
-                  letterSpacing: "3px",
-                  color: "var(--gold)",
-                  textTransform: "uppercase",
-                  marginBottom: 20,
-                }}
-              >
-                Contact
-              </div>
-              <a href="tel:+353899749649" style={{ textDecoration: "none" }}>
-                <div
-                  className="lato"
-                  style={{
-                    color: "var(--stone)",
-                    fontSize: "0.9rem",
-                    marginBottom: 10,
-                  }}
-                >
-                  +353 899749649
-                </div>
-              </a>
-              <a
-                href="mailto:stormsafetyhomeimprovements@gmail.com"
-                style={{ textDecoration: "none" }}
-              >
-                <div
-                  className="lato"
-                  style={{
-                    color: "var(--stone)",
-                    fontSize: "0.9rem",
-                    marginBottom: 10,
-                  }}
-                >
-                  stormsafetyhomeimprovements@gmail.com
-                </div>
-              </a>
-              <div
-                className="lato"
-                style={{ color: "var(--stone)", fontSize: "0.9rem" }}
-              >
-                Carlow, Kilkenny, Tipperary & surrounding counties
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              borderTop: "1px solid rgba(74,124,74,0.15)",
-              paddingTop: 28,
-              display: "flex",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: 12,
-            }}
-          >
-            <div
-              className="lato"
-              style={{ color: "var(--stone)", fontSize: "0.8rem" }}
-            >
-              © 2026 Storm Safety Home Improvements. All rights reserved.
-            </div>
-            <div
-              className="lato"
-              style={{ color: "var(--stone)", fontSize: "0.8rem" }}
-            >
-              Fully Insured · Family Run · Locally Trusted
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer links={NAV_LINKS} />
     </div>
   );
 }
