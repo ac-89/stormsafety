@@ -1055,7 +1055,7 @@ export default function App() {
                   {
                     icon: "📍",
                     label: "Location",
-                    val: "Serving Carlow, Kilkenny, Tipperary & surrounding counties",
+                    val: "Serving Carlow, Kilkenny, Tipperary, Laois, Wicklow, Wexford & surrounding counties",
                     href: "#",
                   },
                   {
