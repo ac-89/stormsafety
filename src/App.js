@@ -147,7 +147,7 @@ function useInView(threshold = 0.15) {
 }
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -191,7 +191,7 @@ export default function App() {
   // const [testRef, testIn] = useInView(0.1);
   const [contRef, contIn] = useInView(0.1);
 
-  const [scrolled, setScrolled] = useState(false);
+  const [, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);

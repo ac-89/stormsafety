@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Footer({ links }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [, setMenuOpen] = useState(false);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
