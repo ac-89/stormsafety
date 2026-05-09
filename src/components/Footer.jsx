@@ -12,7 +12,7 @@ export default function Footer({ links }) {
   return (
     <footer
       style={{
-        background: "#080f08",
+        background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
         borderTop: "1px solid rgba(74,124,74,0.2)",
         padding: "60px 40px 32px",
       }}

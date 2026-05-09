@@ -204,7 +204,7 @@ export default function App() {
       style={{
         fontFamily:
           "'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif",
-        background: "#0f1a0f",
+        // background: "#0f1a0f",
         color: "#e8e0d0",
         overflowX: "hidden",
       }}
@@ -225,7 +225,7 @@ export default function App() {
         }
         html { scroll-behavior: smooth; 
         font-size:18px;}
-        body { background: var(--green-dark); }
+        body { background: var(--green-rich); }
         .playfair { font-family: 'Playfair Display', Georgia, serif; }
         .lato { font-family: 'Lato', sans-serif; }
         .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -375,8 +375,10 @@ export default function App() {
         id="hero"
         style={{
           minHeight: "100vh",
-          background:
-            "linear-gradient(160deg, #0a1a0a 0%, #0f2010 40%, #0a150a 100%)",
+          // background:
+          //   "linear-gradient(160deg, #0a1a0a 0%, #0f2010 40%, #0a150a 100%)",
+          backgroundImage: `url('/images/1-1copy.jpg')`,
+
           display: "flex",
           alignItems: "center",
           position: "relative",
@@ -388,8 +390,8 @@ export default function App() {
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "radial-gradient(ellipse at 70% 50%, rgba(74,124,74,0.08) 0%, transparent 60%)",
+            // background:
+            //   "radial-gradient(ellipse at 70% 50%, rgba(74,124,74,0.08) 0%, transparent 60%)",
             pointerEvents: "none",
           }}
         />
@@ -400,8 +402,8 @@ export default function App() {
             top: "5%",
             width: "55%",
             height: "95%",
-            background:
-              "radial-gradient(ellipse at center, rgba(42,74,42,0.15) 0%, transparent 70%)",
+            // background:
+            //   "radial-gradient(ellipse at center, rgba(42,74,42,0.15) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -461,7 +463,7 @@ export default function App() {
               lineHeight: 1.05,
               maxWidth: 820,
               color: "#fff",
-              marginBottom: 24,
+              marginBottom: 8,
             }}
           >
             Protecting Homes,
@@ -594,7 +596,7 @@ export default function App() {
                 color: "var(--stone-light)",
                 lineHeight: 1.9,
                 fontWeight: 300,
-                marginBottom: 24,
+                marginBottom: 8,
               }}
             >
               At Storm Safety Home Improvements, we believe your home deserves
@@ -620,7 +622,7 @@ export default function App() {
                 color: "var(--stone-light)",
                 lineHeight: 1.9,
                 fontWeight: 300,
-                marginBottom: 24,
+                marginBottom: 8,
               }}
             >
               Storm Safety Home Improvements is a fully insured home improvement
@@ -639,7 +641,7 @@ export default function App() {
                 color: "var(--stone-light)",
                 lineHeight: 1.9,
                 fontWeight: 300,
-                marginBottom: 24,
+                marginBottom: 8,
               }}
             >
               No shortcuts. No compromises. Just outstanding results.
@@ -729,7 +731,6 @@ export default function App() {
                 color: "var(--stone-light)",
                 lineHeight: 1.9,
                 fontWeight: 300,
-                marginBottom: 24,
               }}
             >
               We offer a comprehensive range of home improvement services,
@@ -741,7 +742,7 @@ export default function App() {
                 color: "var(--stone-light)",
                 lineHeight: 1.9,
                 fontWeight: 300,
-                marginBottom: 24,
+                marginBottom: 8,
               }}
             >
               {SERVICES.map(({ title, desc }) => (
@@ -751,7 +752,7 @@ export default function App() {
                     color: "var(--stone-light)",
                     lineHeight: 1.9,
                     fontWeight: 300,
-                    marginBottom: 24,
+                    marginBottom: 8,
                   }}
                 >
                   <strong>{title}</strong> — {desc}
@@ -777,90 +778,13 @@ export default function App() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section
-        id="services"
-        style={{ background: "#0d1a0d", padding: "100px 40px" }}
-      >
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div ref={servRef}>
-            <div className={`fade-up ${servIn ? "in" : ""}`}>
-              <span
-                className="lato"
-                style={{
-                  fontSize: "0.7rem",
-                  letterSpacing: "5px",
-                  textTransform: "uppercase",
-                  color: "var(--gold)",
-                  fontWeight: 700,
-                }}
-              >
-                What We Do
-              </span>
-              <h2
-                className="playfair"
-                style={{
-                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                  fontWeight: 700,
-                  marginTop: 12,
-                  color: "#fff",
-                }}
-              >
-                Our Services
-              </h2>
-              <div className="divider" />
-            </div>
-            <div
-              className={`services-grid fade-up ${servIn ? "in" : ""} fade-up-delay-1`}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 24,
-                marginTop: 8,
-              }}
-            >
-              {SERVICES.map((s, i) => (
-                <div
-                  key={s.title}
-                  className="service-card"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <div style={{ fontSize: "2.4rem", marginBottom: 20 }}>
-                    {s.icon}
-                  </div>
-                  <h3
-                    className="playfair"
-                    style={{
-                      fontSize: "1.4rem",
-                      fontWeight: 700,
-                      color: "#fff",
-                      marginBottom: 14,
-                    }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p
-                    className="lato"
-                    style={{
-                      color: "var(--stone-light)",
-                      lineHeight: 1.8,
-                      fontWeight: 300,
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {s.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* GALLERY */}
       <section
         id="gallery"
-        style={{ background: "#0b160b", padding: "100px 40px" }}
+        style={{
+          padding: "100px 40px",
+          background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
+        }}
       >
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div ref={gallRef}>
@@ -1044,6 +968,83 @@ export default function App() {
         )}
       </section>
 
+      {/* SERVICES */}
+      <section id="services" style={{ padding: "100px 40px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div ref={servRef}>
+            <div className={`fade-up ${servIn ? "in" : ""}`}>
+              <span
+                className="lato"
+                style={{
+                  fontSize: "0.7rem",
+                  letterSpacing: "5px",
+                  textTransform: "uppercase",
+                  color: "var(--gold)",
+                  fontWeight: 700,
+                }}
+              >
+                What We Do
+              </span>
+              <h2
+                className="playfair"
+                style={{
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                  fontWeight: 700,
+                  marginTop: 12,
+                  color: "#fff",
+                }}
+              >
+                Our Services
+              </h2>
+              <div className="divider" />
+            </div>
+            <div
+              className={`services-grid fade-up ${servIn ? "in" : ""} fade-up-delay-1`}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                gap: 24,
+                marginTop: 8,
+              }}
+            >
+              {SERVICES.map((s, i) => (
+                <div
+                  key={s.title}
+                  className="service-card"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <div style={{ fontSize: "2.4rem", marginBottom: 20 }}>
+                    {s.icon}
+                  </div>
+                  <h3
+                    className="playfair"
+                    style={{
+                      fontSize: "1.4rem",
+                      fontWeight: 700,
+                      color: "#fff",
+                      marginBottom: 14,
+                    }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p
+                    className="lato"
+                    style={{
+                      color: "var(--stone-light)",
+                      lineHeight: 1.8,
+                      fontWeight: 300,
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    {s.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       {/* <section style={{ background: "#0f1a0f", padding: "100px 40px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -1116,7 +1117,10 @@ export default function App() {
       {/* CONTACT */}
       <section
         id="contact"
-        style={{ background: "#0d1a0d", padding: "100px 40px" }}
+        style={{
+          background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
+          padding: "100px 40px",
+        }}
       >
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div ref={contRef}>
