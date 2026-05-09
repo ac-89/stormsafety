@@ -35,6 +35,15 @@ const SERVICES = [
   },
 ];
 
+const counties = [
+  "Carlow",
+  "Kilkenny",
+  "Tipperary",
+  "Laois",
+  "Wicklow",
+  "Wexford",
+];
+
 const NAV_LINKS = ["Services", "Gallery", "About", "Contact"];
 
 function importAll(r) {
@@ -214,7 +223,8 @@ export default function App() {
           --stone: #8a7e6e;
           --stone-light: #b0a898;
         }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; 
+        font-size:18px;}
         body { background: var(--green-dark); }
         .playfair { font-family: 'Playfair Display', Georgia, serif; }
         .lato { font-family: 'Lato', sans-serif; }
@@ -528,6 +538,241 @@ export default function App() {
                 </div>
               </div>
             ))} */}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT BANNER */}
+      <section
+        id="about"
+        style={{
+          background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
+          padding: "80px 40px",
+          borderTop: "1px solid rgba(74,124,74,0.2)",
+          borderBottom: "1px solid rgba(74,124,74,0.2)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: "0 auto",
+            display: "flex",
+            gap: 60,
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <div style={{ flex: "1 1 340px" }}>
+            <span
+              className="lato"
+              style={{
+                fontSize: "0.7rem",
+                letterSpacing: "5px",
+                textTransform: "uppercase",
+                color: "var(--gold)",
+                fontWeight: 700,
+              }}
+            >
+              About Us
+            </span>
+            <h2
+              className="playfair"
+              style={{
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 700,
+                marginTop: 12,
+                color: "#fff",
+                lineHeight: 1.2,
+              }}
+            >
+              We Don't Just Improve Homes — We Transform Them.
+            </h2>
+            <div className="divider" />
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+                marginBottom: 24,
+              }}
+            >
+              At Storm Safety Home Improvements, we believe your home deserves
+              nothing but the best. From the moment we arrive on-site to the
+              final finishing touch, we bring unmatched quality, precision, and
+              pride to every single job we take on.
+            </p>
+            <h3
+              className="lato"
+              style={{
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 700,
+                marginTop: 12,
+                color: "#fff",
+                lineHeight: 1.2,
+              }}
+            >
+              Who We Are
+            </h3>
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+                marginBottom: 24,
+              }}
+            >
+              Storm Safety Home Improvements is a fully insured home improvement
+              company serving homeowners across{" "}
+              <strong>
+                Carlow, Kilkenny, Tipperary, Laois, Wicklow, and Wexford
+              </strong>
+              . Whether you're looking to breathe new life into a tired
+              driveway, restore your roof to its former glory, or completely
+              transform your outdoor space — we have the skills, the experience,
+              and the passion to get it done right.
+            </p>
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+                marginBottom: 24,
+              }}
+            >
+              No shortcuts. No compromises. Just outstanding results.
+            </p>
+
+            <h3
+              className="lato"
+              style={{
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 700,
+                marginTop: 12,
+                color: "#fff",
+                lineHeight: 1.2,
+              }}
+            >
+              Our Promise To You
+            </h3>
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+              }}
+            >
+              Every customer who calls Storm Safety Home Improvements can expect
+              the same thing: a job done properly, the first time. We take
+              enormous pride in our craft, and our results speak for themselves.
+            </p>
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+              }}
+            >
+              We offer <strong>free quotations</strong> on all work, so there's
+              no risk in reaching out. Just honest advice and a fair price from
+              a team that genuinely cares about the quality of their work.
+            </p>
+            {[
+              ["✅", "Fully Insured & Certified"],
+              ["📍", "Locally Based Team"],
+              ["📞", "Same-Day Response Available"],
+              ["🧹", "Always Leave Site Clean"],
+            ].map(([icon, text]) => (
+              <div
+                key={text}
+                className="lato"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 16,
+                  color: "var(--stone-light)",
+                  fontSize: "0.95rem",
+                }}
+              >
+                <span style={{ fontSize: "1.2rem" }}>{icon}</span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              flex: "1 1 260px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 20,
+            }}
+          >
+            <h3
+              className="lato"
+              style={{
+                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                fontWeight: 700,
+                marginTop: 12,
+                color: "#fff",
+                lineHeight: 1.2,
+              }}
+            >
+              What We Do
+            </h3>
+            <p
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+                marginBottom: 24,
+              }}
+            >
+              We offer a comprehensive range of home improvement services,
+              including:
+            </p>
+            <ul
+              className="lato"
+              style={{
+                color: "var(--stone-light)",
+                lineHeight: 1.9,
+                fontWeight: 300,
+                marginBottom: 24,
+              }}
+            >
+              {SERVICES.map(({ title, desc }) => (
+                <li
+                  key={title}
+                  style={{
+                    color: "var(--stone-light)",
+                    lineHeight: 1.9,
+                    fontWeight: 300,
+                    marginBottom: 24,
+                  }}
+                >
+                  <strong>{title}</strong> — {desc}
+                </li>
+              ))}
+
+              <h2>Areas We Cover</h2>
+              <p>
+                Based in the heart of Ireland's South East, we proudly serve
+                homeowners right across the region. No matter where you are in{" "}
+                <strong>
+                  Carlow, Kilkenny, Tipperary, Laois, Wicklow, or Wexford
+                </strong>{" "}
+                — we'll come to you.
+              </p>
+              <ul className="county-list">
+                {counties.map((county) => (
+                  <li key={county}>📍 {county}</li>
+                ))}
+              </ul>
+            </ul>
           </div>
         </div>
       </section>
@@ -864,113 +1109,6 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* ABOUT BANNER */}
-      {/* <section
-        id="about"
-        style={{
-          background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
-          padding: "80px 40px",
-          borderTop: "1px solid rgba(74,124,74,0.2)",
-          borderBottom: "1px solid rgba(74,124,74,0.2)",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            display: "flex",
-            gap: 60,
-            alignItems: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={{ flex: "1 1 340px" }}>
-            <span
-              className="lato"
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "5px",
-                textTransform: "uppercase",
-                color: "var(--gold)",
-                fontWeight: 700,
-              }}
-            >
-              About Us
-            </span>
-            <h2
-              className="playfair"
-              style={{
-                fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-                fontWeight: 700,
-                marginTop: 12,
-                color: "#fff",
-                lineHeight: 1.2,
-              }}
-            >
-              Family-Run, <br />
-              Community Trusted
-            </h2>
-            <div className="divider" />
-            <p
-              className="lato"
-              style={{
-                color: "var(--stone-light)",
-                lineHeight: 1.9,
-                fontWeight: 300,
-                marginBottom: 24,
-              }}
-            >
-              Storm Safety Home Repairs has been serving local homeowners for
-              over 12 years. We started as a tree surgery specialist and grew
-              into a full home maintenance service — all with the same ethos: do
-              the job right, leave every property better than we found it.
-            </p>
-            <p
-              className="lato"
-              style={{
-                color: "var(--stone-light)",
-                lineHeight: 1.9,
-                fontWeight: 300,
-              }}
-            >
-              Fully insured, locally based, and proud of every job we complete.
-              We show up on time, keep you informed, and clean up after
-              ourselves.
-            </p>
-          </div>
-          <div
-            style={{
-              flex: "1 1 260px",
-              display: "flex",
-              flexDirection: "column",
-              gap: 20,
-            }}
-          >
-            {[
-              ["✅", "Fully Insured & Certified"],
-              ["📍", "Locally Based Team"],
-              ["📞", "Same-Day Response Available"],
-              ["🧹", "Always Leave Site Clean"],
-            ].map(([icon, text]) => (
-              <div
-                key={text}
-                className="lato"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 16,
-                  color: "var(--stone-light)",
-                  fontSize: "0.95rem",
-                }}
-              >
-                <span style={{ fontSize: "1.2rem" }}>{icon}</span>
-                <span>{text}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section> */}
