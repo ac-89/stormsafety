@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 export default function Navbar({ links }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log(links);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
