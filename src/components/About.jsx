@@ -286,6 +286,40 @@ export default function About({ scrollTo }) {
           </ul>
         </div>
       </div>
+      <div
+        style={{
+          background: "var(--green-accent)",
+          padding: "40px 20px",
+          textAlign: "center",
+          fontSize: "1.2rem",
+          marginTop: 60,
+        }}
+      >
+        <h2>Ready to get started?</h2>
+        <p>Call us today for a free quote!</p>
+        <a
+          href="tel:0599187189"
+          style={{
+            color: "white",
+            textDecoration: "underline",
+            fontSize: "1.5rem",
+            margin: "20px 0",
+          }}
+        >
+          059 9187189
+        </a>
+        <a
+          href="tel:+353899749649"
+          style={{
+            color: "white",
+            textDecoration: "underline",
+            marginLeft: 20,
+            fontSize: "1.5rem",
+          }}
+        >
+          089 974 9649
+        </a>
+      </div>
     </section>
   );
 }

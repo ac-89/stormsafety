@@ -385,7 +385,7 @@ export default function App() {
           background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
         }}
       >
-        <div style={{ maxWidth: 1600, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div ref={gallRef}>
             <div
               className={`fade-up ${gallIn ? "in" : ""}`}
@@ -721,7 +721,7 @@ export default function App() {
           padding: "100px 40px",
         }}
       >
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <div ref={contRef}>
             <div
               className={`fade-up ${contIn ? "in" : ""}`}
@@ -828,6 +828,7 @@ export default function App() {
                           justifyContent: "center",
                           fontSize: "1.2rem",
                           flexShrink: 0,
+                          marginBottom: 14,
                         }}
                       >
                         {icon}
@@ -836,7 +837,7 @@ export default function App() {
                         <div
                           className="lato"
                           style={{
-                            fontSize: "0.7rem",
+                            // fontSize: "0.7rem",
                             letterSpacing: "2px",
                             textTransform: "uppercase",
                             color: "var(--gold)",
@@ -847,7 +848,7 @@ export default function App() {
                         </div>
                         <div
                           className="lato"
-                          style={{ color: "var(--cream)", fontSize: "0.95rem" }}
+                          style={{ color: "var(--cream)", fontSize: "1.2rem" }}
                         >
                           {val}
                         </div>
