@@ -385,7 +385,7 @@ export default function App() {
           background: "linear-gradient(135deg, #1a3a1a 0%, #0f2010 100%)",
         }}
       >
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1600, margin: "0 auto" }}>
           <div ref={gallRef}>
             <div
               className={`fade-up ${gallIn ? "in" : ""}`}
@@ -434,7 +434,7 @@ export default function App() {
               className={`gallery-grid fade-up ${gallIn ? "in" : ""} fade-up-delay-1`}
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
+                gridTemplateColumns: "repeat(4, 1fr)",
                 gap: 16,
               }}
             >
