@@ -39,7 +39,7 @@ const counties = [
   "Wexford",
 ];
 
-export default function About(scrollTo) {
+export default function About({ scrollTo }) {
   return (
     <section
       id="about"

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 
-export default function Hero(scrollTo) {
+export default function Hero({ scrollTo }) {
   const [heroRef, heroIn] = useInView(0.1);
 
   function useInView(threshold = 0.15) {
