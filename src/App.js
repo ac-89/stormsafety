@@ -218,11 +218,11 @@ export default function App() {
           --green-mid: #1a2e1a;
           --green-rich: #2a4a2a;
           --green-accent: #4a7c4a;
-          --gold: #23c3d5;
+          --gold: #c8a84b;
           --gold-light: #e0c070;
           --cream: #e8e0d0;
           --stone: #8a7e6e;
-          --stone-light: #b0a898;
+          --stone-light: #fff1e8;
         }
         html { scroll-behavior: smooth; 
         font-size:18px;}
