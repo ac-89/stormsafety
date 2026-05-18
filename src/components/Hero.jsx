@@ -140,19 +140,19 @@ export default function Hero({ scrollTo }) {
         >
           From storm-damaged trees to mossy rooftops and grimy driveways — Storm
           Safety Home Improvements delivers expert, reliable work across all
-          aspects of home maintenance. Call us today at{" "}
+          aspects of home maintenance. Call us today at
           <a
             href="tel:0599187189"
             style={{ color: "var(--gold)", fontWeight: 500 }}
           >
-            059 9187189
+            📞059 9187189
           </a>{" "}
           or at{" "}
           <a
             href="tel:+353899749649"
             style={{ color: "var(--gold)", fontWeight: 500 }}
           >
-            089 974 9649
+            📞089 974 9649
           </a>{" "}
           for a free quote and experience the Storm Safety difference.
         </p>

@@ -69,12 +69,12 @@ export default function About({ scrollTo }) {
             fontWeight: 700,
           }}
         >
-          About Us
+          Is this you?
         </span>
         <h2
           className="playfair"
           style={{
-            fontSize: "clamp(2rem, 4vw, 3.2rem)",
+            fontSize: "clamp(2rem, 4vw, 2.2rem)",
             fontWeight: 700,
             marginTop: 16,
             color: "#fff",
@@ -100,7 +100,7 @@ export default function About({ scrollTo }) {
               lineHeight: 1.9,
               fontWeight: text === "We have." ? 700 : 300,
               color: text === "We have." ? "var(--gold)" : "var(--stone-light)",
-              fontSize: text === "We have." ? "1.4rem" : "1.05rem",
+              fontSize: text === "We have." ? "1.8rem" : "1.5rem",
               marginBottom: 8,
             }}
           >
@@ -112,9 +112,9 @@ export default function About({ scrollTo }) {
       {/* ── FULL-WIDTH HERO IMAGE ── */}
       <div
         style={{
-          width: "60%",
+          width: "80%",
           margin: "0 auto",
-          height: 420,
+          height: 620,
           overflow: "hidden",
         }}
       >
@@ -124,7 +124,7 @@ export default function About({ scrollTo }) {
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "contain",
             objectPosition: "center",
           }}
         />
