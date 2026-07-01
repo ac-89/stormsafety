@@ -81,7 +81,7 @@ export default function About({ scrollTo }) {
             lineHeight: 1.25,
           }}
         >
-          Moss holds moisture on. yoour roof, causing expensive structural
+          Moss holds moisture on. your roof, causing expensive structural
           damage.
           <br />
           <br />

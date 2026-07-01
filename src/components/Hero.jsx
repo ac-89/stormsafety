@@ -145,14 +145,14 @@ export default function Hero({ scrollTo }) {
           insured, certified, and we always show up. Call us today at
           <a
             href="tel:0599187189"
-            style={{ color: "var(--gold)", fontWeight: 500 }}
+            style={{ color: "var(--gold)", fontWeight: 700 }}
           >
             📞059 9187189
           </a>{" "}
           or at{" "}
           <a
             href="tel:+353899749649"
-            style={{ color: "var(--gold)", fontWeight: 500 }}
+            style={{ color: "var(--gold)", fontWeight: 700 }}
           >
             📞089 974 9649
           </a>{" "}
