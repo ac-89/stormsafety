@@ -32,8 +32,9 @@ export default function Hero({ scrollTo }) {
       style={{
         minHeight: "100vh",
         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/gallery/5-2.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: "contain cover",
+        backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center",
         backgroundAttachment: "fixed",
         display: "flex",
         alignItems: "center",
@@ -108,23 +109,24 @@ export default function Hero({ scrollTo }) {
               fontWeight: 700,
             }}
           >
-            ⚡ Trusted Local Experts
+            Trusted Local Experts
           </span>
         </div>
         <h1
           className={`playfair hero-title fade-up ${heroIn ? "in" : ""} fade-up-delay-1`}
           style={{
-            fontSize: "clamp(3rem, 7vw, 6rem)",
+            fontSize: "clamp(2.5rem, 7vw, 5rem)",
             fontWeight: 900,
             lineHeight: 1.05,
-            maxWidth: 820,
+            maxWidth: 960,
             color: "#fff",
             marginBottom: 8,
           }}
         >
-          Protecting Homes,
+          Get a Beautiful, Fully Restored Home
           <br />
-          <span style={{ color: "var(--gold)" }}>One Job</span> at a Time.
+          <span style={{ color: "var(--gold)" }}>Without</span> The Contractor
+          Headache.
         </h1>
         <div className="divider" />
         <p
@@ -135,12 +137,12 @@ export default function Hero({ scrollTo }) {
             color: "white",
             maxWidth: 540,
             marginBottom: 48,
-            fontWeight: 300,
+            fontWeight: 500,
           }}
         >
-          From storm-damaged trees to mossy rooftops and grimy driveways — Storm
-          Safety Home Improvements delivers expert, reliable work across all
-          aspects of home maintenance. Call us today at
+          Reliable roof cleaning, power washing, and exterior maintenance across
+          Carlow, Kilkenny, Tipperary, Laois, Wicklow and Wexford. Fully
+          insured, certified, and we always show up. Call us today at
           <a
             href="tel:0599187189"
             style={{ color: "var(--gold)", fontWeight: 500 }}

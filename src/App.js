@@ -222,7 +222,7 @@ export default function App() {
           --gold-light: #e0c070;
           --cream: #e8e0d0;
           --stone: #8a7e6e;
-          --stone-light: #fff1e8;
+          --stone-light: #fff;
         }
         html { scroll-behavior: smooth; 
         font-size:18px;}

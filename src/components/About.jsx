@@ -69,7 +69,7 @@ export default function About({ scrollTo }) {
             fontWeight: 700,
           }}
         >
-          Is this you?
+          About Storm Safety Home Improvements
         </span>
         <h2
           className="playfair"
@@ -81,32 +81,32 @@ export default function About({ scrollTo }) {
             lineHeight: 1.25,
           }}
         >
-          Your driveway is black with algae.
+          Moss holds moisture on. yoour roof, causing expensive structural
+          damage.
           <br />
-          Your roof is thick with moss.
           <br />
-          Your garden has been ignored for another winter.
+          Algae spreads across your driveway, making it slick and unsightly.
+          <br />
+          <br />
+          Worst of all? Finding a team that actually shows up and does the work
+          is harder than it should be. That's where we come in.
         </h2>
         <div className="divider divider-center" />
-        {[
-          "You've driven past it every day. Told yourself you'd sort it.",
-          "You haven't.",
-          "We have.",
-        ].map((text) => (
-          <p
-            key={text}
-            className="lato"
-            style={{
-              lineHeight: 1.9,
-              fontWeight: text === "We have." ? 700 : 300,
-              color: text === "We have." ? "var(--gold)" : "var(--stone-light)",
-              fontSize: text === "We have." ? "1.8rem" : "1.5rem",
-              marginBottom: 8,
-            }}
-          >
-            {text}
-          </p>
-        ))}
+
+        <p
+          className="lato"
+          style={{
+            lineHeight: 1.9,
+            fontWeight: 300,
+            color: "var(--stone-light)",
+            fontSize: "1.5rem",
+            marginBottom: 8,
+          }}
+        >
+          A neglected property is a costly property. We help homeowners protect
+          their investment with expert, reliable work across all aspects of home
+          maintenance.
+        </p>
       </div>
 
       {/* ── FULL-WIDTH HERO IMAGE ── */}
